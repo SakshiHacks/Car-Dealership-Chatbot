@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoBot - Car Dealership Assistant</title>
+    <style>
+        :root {
+            --bg-color-light: #f4f6f8;
+            --text-color-light: #000;
+            --header-bg-light: #004aad;
+            --user-msg-bg-light: #d1eaff;
+            --bot-msg-bg-light: #e6e6e6;
+            --input-bg-light: #fff;
+            --input-text-light: #000;
+
+            --bg-color-dark: #1e1e1e;
+            --text-color-dark: #fff;
+            --header-bg-dark: #1a73e8;
+            --user-msg-bg-dark: #3a3a3a;
+            --bot-msg-bg-dark: #2a2a2a;
+            --input-bg-dark: #2d2d2d;
+            --input-text-dark: #fff;
+        }
+
+        body {
+            background: var(--bg-color-light);
+            color: var(--text-color-light);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .chat-container {
+            max-width: 700px;
+            margin: 40px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+
+        .chat-header {
+            background: var(--header-bg-light);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .chat-box {
+            padding: 20px;
+            height: 450px;
+            overflow-y: auto;
+            background: var(--bg-color-light);
+            transition: background 0.3s;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 20px;
+            max-width: 80%;
+            clear: both;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .user {
+            background: var(--user-msg-bg-light);
+            align-self: flex-end;
+            float: right;
+            text-align: right;
+            transition: background 0.3s;
+        }
+
+        .bot {
+            background: var(--bot-msg-bg-light);
+            align-self: flex-start;
+            float: left;
+            transition: background 0.3s;
+        }
+
+        .input-area {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            background: var(--input-bg-light);
+            transition: background 0.3s;
+        }
+
+        #user_input {
+            flex-grow: 1;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            background: var(--input-bg-light);
+            color: var(--input-text-light);
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        button {
+            margin-left: 10px;
+            background: var(--header-bg-light);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #00337c;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid #999;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 8px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .chat-container {
+                margin: 20px;
+            }
+
+            .chat-box {
+                height: 350px;
+            }
+        }
+
+        body.dark-mode {
+            background: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        body.dark-mode .chat-container {
+            background: var(--bg-color-dark);
+        }
+
+        body.dark-mode .chat-header {
+            background: var(--header-bg-dark);
+        }
+
+        body.dark-mode .chat-box {
+            background: var(--bg-color-dark);
+        }
+
+        body.dark-mode .user {
+            background: var(--user-msg-bg-dark);
+        }
+
+        body.dark-mode .bot {
+            background: var(--bot-msg-bg-dark);
+        }
+
+        body.dark-mode button {
+            background: var(--header-bg-dark);
+        }
+
+        body.dark-mode .input-area {
+            background: var(--input-bg-dark);
+            border-top-color: #444;
+        }
+
+        body.dark-mode #user_input {
+            background: var(--input-bg-dark);
+            color: var(--input-text-dark);
+            border-color: #444;
+        }
+
+        body.dark-mode #user_input::placeholder {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">🚗 AutoBot – Your Car Dealership Assistant</div>
+        <div class="chat-box" id="conversation"></div>
+        <div class="input-area">
+            <input type="text" id="user_input" placeholder="Ask about cars, models, prices, etc..." />
+            <button onclick="send()">Send</button>
+        </div>
+    </div>
+
+    <button id="toggle-mode" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; border: none; border-radius: 5px; background: #004aad; color: white; cursor: pointer;">Toggle Dark Mode</button>
+
+    <script>
+        function appendMessage(content, className) {
+            const convo = document.getElementById("conversation");
+            const messageDiv = document.createElement("div");
+            messageDiv.className = `message ${className}`;
+            messageDiv.innerText = content;
+            convo.appendChild(messageDiv);
+            convo.scrollTop = convo.scrollHeight;
+        }
+
+        function send() {
+            const inputField = document.getElementById("user_input");
+            const userInput = inputField.value.trim();
+
+            if (!userInput) return;
+
+            appendMessage(userInput, "user");
+            inputField.value = "";
+
+            // Show loading message
+            const convo = document.getElementById("conversation");
+            const loading = document.createElement("div");
+            loading.className = "message bot";
+            loading.innerHTML = `AutoBot is typing <span class="loader"></span>`;
+            convo.appendChild(loading);
+            convo.scrollTop = convo.scrollHeight;
+
+            fetch(`/get?msg=${encodeURIComponent(userInput)}`)
+                .then(res => res.json())  // Parse JSON response
+                .then(data => {
+                    convo.removeChild(loading);
+                    appendMessage(data.reply, "bot");
+                })
+                .catch(err => {
+                    convo.removeChild(loading);
+                    appendMessage("Sorry, something went wrong!", "bot");
+                });
+        }
+
+        // Allow pressing Enter to send
+        document.getElementById("user_input").addEventListener("keypress", function (e) {
+            if (e.key === "Enter") send();
+        });
+
+        // Toggle dark mode
+        const toggleButton = document.getElementById("toggle-mode");
+        toggleButton.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>
