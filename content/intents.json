@@ -1,0 +1,650 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hello",
+        "Hey",
+        "Is anyone there?",
+        "Good day",
+        "Howdy",
+        "Greetings",
+        "Hey there!"
+      ],
+      "responses": [
+        "Hello! Welcome to AutoDrive Car Dealership. How can I assist you today?",
+        "Hi there! How can I help you today?"
+      ]
+    },
+    {
+      "tag": "car_models",
+      "patterns": [
+        "Im interested in buying a sedan. What models do you have?",
+        "What car models do you have?",
+        "Show me your sedans",
+        "Which sedans are available?"
+      ],
+      "responses": [
+        "We currently have the Honda Civic, Toyota Corolla, and Hyundai Elantra in our sedan lineup. Would you like details on any of them?"
+      ]
+    },
+    {
+      "tag": "car_details",
+      "patterns": [
+        "Tell me more about the Honda Civic",
+        "Whats the Honda Civic like?",
+        "Give me details about Honda Civic",
+        "Honda Civic features"
+      ],
+      "responses": [
+        "The Honda Civic 2024 comes with a turbocharged engine, advanced safety features, and a fuel economy of 32 mpg. It\u2019s available in multiple colors and trims."
+      ]
+    },
+    {
+      "tag": "car_price",
+      "patterns": [
+        "Whats the price of the Honda Civic?",
+        "How much does the Honda Civic cost?",
+        "Tell me the price of Toyota Corolla",
+        "How much for the Hyundai Elantra?"
+      ],
+      "responses": [
+        "The Honda Civic starts at $22,000. Would you like to schedule a test drive?",
+        "The Toyota Corolla starts at $20,000."
+      ]
+    },
+    {
+      "tag": "test_drive",
+      "patterns": [
+        "Can I book a test drive?",
+        "I want to test a car",
+        "Schedule a test drive",
+        "Can I try the car before buying?",
+        "I would like to test drive the Honda Civic"
+      ],
+      "responses": [
+        "Sure! Please provide your preferred date and time for the test drive, and I\u2019ll confirm it.",
+        "We can schedule a test drive. What date and time work best for you?"
+      ]
+    },
+    {
+      "tag": "test_drive_confirmation",
+      "patterns": [
+        "I want to book a test drive for tomorrow",
+        "Book a test drive for 10 AM tomorrow",
+        "I\u2019d like to test drive tomorrow at 10 AM"
+      ],
+      "responses": [
+        "Got it! Your test drive for the Honda Civic is scheduled for tomorrow at 10 AM. See you then!"
+      ]
+    },
+    {
+      "tag": "financing_options",
+      "patterns": [
+        "Do you offer financing options?",
+        "Can I get financing?",
+        "Tell me about financing",
+        "Do you offer loans for cars?",
+        "What are your car loan options?"
+      ],
+      "responses": [
+        "Yes, we offer flexible financing options starting at 2.5% interest. Would you like to apply for financing?",
+        "We offer EMI plans with low interest rates. Would you like a finance rep to contact you?"
+      ]
+    },
+    {
+      "tag": "finance_contact",
+      "patterns": [
+        "Please contact me about financing",
+        "I want to speak to someone about financing",
+        "Can a finance rep contact me?"
+      ],
+      "responses": [
+        "Sure! Our finance team will reach out to you shortly. Anything else I can assist with?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Thanks for your help",
+        "Goodbye",
+        "See you later",
+        "Talk to you soon",
+        "That\u2019s all, thanks!"
+      ],
+      "responses": [
+        "You're welcome! Have a great day and we look forward to seeing you tomorrow! \ud83d\ude97\u2728",
+        "Goodbye! Feel free to reach out anytime."
+      ]
+    },
+    {
+      "tag": "details_honda_civic",
+      "patterns": [
+        "Tell me about Honda Civic",
+        "What features does the Honda Civic have?",
+        "Honda Civic details"
+      ],
+      "responses": [
+        "The Honda Civic comes with Turbocharged engine, advanced safety features, 32 mpg. It starts at $22,000."
+      ]
+    },
+    {
+      "tag": "details_toyota_corolla",
+      "patterns": [
+        "Tell me about Toyota Corolla",
+        "What features does the Toyota Corolla have?",
+        "Toyota Corolla details"
+      ],
+      "responses": [
+        "The Toyota Corolla comes with Reliable performance, good fuel efficiency, compact design. It starts at $20,000."
+      ]
+    },
+    {
+      "tag": "details_hyundai_elantra",
+      "patterns": [
+        "Tell me about Hyundai Elantra",
+        "What features does the Hyundai Elantra have?",
+        "Hyundai Elantra details"
+      ],
+      "responses": [
+        "The Hyundai Elantra comes with Stylish design, spacious interior, touchscreen display. It starts at $21,500."
+      ]
+    },
+    {
+      "tag": "details_tesla_model_3",
+      "patterns": [
+        "Tell me about Tesla Model 3",
+        "What features does the Tesla Model 3 have?",
+        "Tesla Model 3 details"
+      ],
+      "responses": [
+        "The Tesla Model 3 comes with Electric, autopilot, high-tech cabin. It starts at $39,000."
+      ]
+    },
+    {
+      "tag": "details_ford_mustang",
+      "patterns": [
+        "Tell me about Ford Mustang",
+        "What features does the Ford Mustang have?",
+        "Ford Mustang details"
+      ],
+      "responses": [
+        "The Ford Mustang comes with V8 engine, sporty design, powerful performance. It starts at $27,000."
+      ]
+    },
+    {
+      "tag": "details_chevrolet_malibu",
+      "patterns": [
+        "Tell me about Chevrolet Malibu",
+        "What features does the Chevrolet Malibu have?",
+        "Chevrolet Malibu details"
+      ],
+      "responses": [
+        "The Chevrolet Malibu comes with Comfortable ride, advanced safety, hybrid option. It starts at $24,000."
+      ]
+    },
+    {
+      "tag": "details_bmw_3_series",
+      "patterns": [
+        "Tell me about BMW 3 Series",
+        "What features does the BMW 3 Series have?",
+        "BMW 3 Series details"
+      ],
+      "responses": [
+        "The BMW 3 Series comes with Luxury interior, turbocharged engine, premium handling. It starts at $41,000."
+      ]
+    },
+    {
+      "tag": "details_audi_a4",
+      "patterns": [
+        "Tell me about Audi A4",
+        "What features does the Audi A4 have?",
+        "Audi A4 details"
+      ],
+      "responses": [
+        "The Audi A4 comes with Quattro all-wheel drive, luxury features, tech-packed. It starts at $43,000."
+      ]
+    },
+    {
+      "tag": "details_mercedes-benz_c-class",
+      "patterns": [
+        "Tell me about Mercedes-Benz C-Class",
+        "What features does the Mercedes-Benz C-Class have?",
+        "Mercedes-Benz C-Class details"
+      ],
+      "responses": [
+        "The Mercedes-Benz C-Class comes with Elegant design, comfortable interior, top-tier safety. It starts at $45,000."
+      ]
+    },
+    {
+      "tag": "details_kia_forte",
+      "patterns": [
+        "Tell me about Kia Forte",
+        "What features does the Kia Forte have?",
+        "Kia Forte details"
+      ],
+      "responses": [
+        "The Kia Forte comes with Fuel efficient, compact, budget-friendly. It starts at $18,000."
+      ]
+    },
+    {
+      "tag": "details_nissan_altima",
+      "patterns": [
+        "Tell me about Nissan Altima",
+        "What features does the Nissan Altima have?",
+        "Nissan Altima details"
+      ],
+      "responses": [
+        "The Nissan Altima comes with Spacious, good fuel economy, AWD available. It starts at $24,500."
+      ]
+    },
+    {
+      "tag": "details_volkswagen_jetta",
+      "patterns": [
+        "Tell me about Volkswagen Jetta",
+        "What features does the Volkswagen Jetta have?",
+        "Volkswagen Jetta details"
+      ],
+      "responses": [
+        "The Volkswagen Jetta comes with Compact, German engineering, digital cockpit. It starts at $21,000."
+      ]
+    },
+    {
+      "tag": "details_mazda_3",
+      "patterns": [
+        "Tell me about Mazda 3",
+        "What features does the Mazda 3 have?",
+        "Mazda 3 details"
+      ],
+      "responses": [
+        "The Mazda 3 comes with Sporty handling, upscale interior, efficient. It starts at $22,000."
+      ]
+    },
+    {
+      "tag": "details_subaru_impreza",
+      "patterns": [
+        "Tell me about Subaru Impreza",
+        "What features does the Subaru Impreza have?",
+        "Subaru Impreza details"
+      ],
+      "responses": [
+        "The Subaru Impreza comes with All-wheel drive, reliability, fuel efficiency. It starts at $20,500."
+      ]
+    },
+    {
+      "tag": "details_toyota_camry",
+      "patterns": [
+        "Tell me about Toyota Camry",
+        "What features does the Toyota Camry have?",
+        "Toyota Camry details"
+      ],
+      "responses": [
+        "The Toyota Camry comes with Spacious sedan, powerful engine, high resale value. It starts at $26,000."
+      ]
+    },
+    {
+      "tag": "details_hyundai_sonata",
+      "patterns": [
+        "Tell me about Hyundai Sonata",
+        "What features does the Hyundai Sonata have?",
+        "Hyundai Sonata details"
+      ],
+      "responses": [
+        "The Hyundai Sonata comes with Mid-size sedan, lots of tech, comfortable ride. It starts at $25,000."
+      ]
+    },
+    {
+      "tag": "details_kia_k5",
+      "patterns": [
+        "Tell me about Kia K5",
+        "What features does the Kia K5 have?",
+        "Kia K5 details"
+      ],
+      "responses": [
+        "The Kia K5 comes with Sleek design, turbocharged, affordable price. It starts at $23,000."
+      ]
+    },
+    {
+      "tag": "details_tesla_model_y",
+      "patterns": [
+        "Tell me about Tesla Model Y",
+        "What features does the Tesla Model Y have?",
+        "Tesla Model Y details"
+      ],
+      "responses": [
+        "The Tesla Model Y comes with Electric SUV, long range, autopilot. It starts at $47,000."
+      ]
+    },
+    {
+      "tag": "details_jeep_grand_cherokee",
+      "patterns": [
+        "Tell me about Jeep Grand Cherokee",
+        "What features does the Jeep Grand Cherokee have?",
+        "Jeep Grand Cherokee details"
+      ],
+      "responses": [
+        "The Jeep Grand Cherokee comes with Off-road capable, luxury trim available, spacious. It starts at $38,000."
+      ]
+    },
+    {
+      "tag": "details_ford_explorer",
+      "patterns": [
+        "Tell me about Ford Explorer",
+        "What features does the Ford Explorer have?",
+        "Ford Explorer details"
+      ],
+      "responses": [
+        "The Ford Explorer comes with 3-row SUV, powerful engine options, large cargo space. It starts at $36,000."
+      ]
+    },
+    {
+      "tag": "details_chevrolet_tahoe",
+      "patterns": [
+        "Tell me about Chevrolet Tahoe",
+        "What features does the Chevrolet Tahoe have?",
+        "Chevrolet Tahoe details"
+      ],
+      "responses": [
+        "The Chevrolet Tahoe comes with Full-size SUV, advanced tech, great for families. It starts at $50,000."
+      ]
+    },
+    {
+      "tag": "details_gmc_terrain",
+      "patterns": [
+        "Tell me about GMC Terrain",
+        "What features does the GMC Terrain have?",
+        "GMC Terrain details"
+      ],
+      "responses": [
+        "The GMC Terrain comes with Compact SUV, stylish design, infotainment system. It starts at $30,000."
+      ]
+    },
+    {
+      "tag": "details_nissan_rogue",
+      "patterns": [
+        "Tell me about Nissan Rogue",
+        "What features does the Nissan Rogue have?",
+        "Nissan Rogue details"
+      ],
+      "responses": [
+        "The Nissan Rogue comes with Efficient crossover, intuitive tech, great value. It starts at $27,000."
+      ]
+    },
+    {
+      "tag": "details_toyota_rav4",
+      "patterns": [
+        "Tell me about Toyota RAV4",
+        "What features does the Toyota RAV4 have?",
+        "Toyota RAV4 details"
+      ],
+      "responses": [
+        "The Toyota RAV4 comes with Popular SUV, hybrid option, reliable. It starts at $28,000."
+      ]
+    },
+    {
+      "tag": "details_honda_cr-v",
+      "patterns": [
+        "Tell me about Honda CR-V",
+        "What features does the Honda CR-V have?",
+        "Honda CR-V details"
+      ],
+      "responses": [
+        "The Honda CR-V comes with Spacious, excellent fuel economy, family-friendly. It starts at $29,000."
+      ]
+    },
+    {
+      "tag": "details_mazda_cx-5",
+      "patterns": [
+        "Tell me about Mazda CX-5",
+        "What features does the Mazda CX-5 have?",
+        "Mazda CX-5 details"
+      ],
+      "responses": [
+        "The Mazda CX-5 comes with Sharp handling, upscale design, efficient. It starts at $30,500."
+      ]
+    },
+    {
+      "tag": "details_bmw_x3",
+      "patterns": [
+        "Tell me about BMW X3",
+        "What features does the BMW X3 have?",
+        "BMW X3 details"
+      ],
+      "responses": [
+        "The BMW X3 comes with Luxury SUV, powerful engine, all-wheel drive. It starts at $48,000."
+      ]
+    },
+    {
+      "tag": "details_audi_q5",
+      "patterns": [
+        "Tell me about Audi Q5",
+        "What features does the Audi Q5 have?",
+        "Audi Q5 details"
+      ],
+      "responses": [
+        "The Audi Q5 comes with Luxury compact SUV, tech-packed, premium interior. It starts at $50,000."
+      ]
+    },
+    {
+      "tag": "details_mercedes-benz_glc",
+      "patterns": [
+        "Tell me about Mercedes-Benz GLC",
+        "What features does the Mercedes-Benz GLC have?",
+        "Mercedes-Benz GLC details"
+      ],
+      "responses": [
+        "The Mercedes-Benz GLC comes with Luxury, comfort, advanced tech features. It starts at $52,000."
+      ]
+    },
+    {
+      "tag": "details_hyundai_tucson",
+      "patterns": [
+        "Tell me about Hyundai Tucson",
+        "What features does the Hyundai Tucson have?",
+        "Hyundai Tucson details"
+      ],
+      "responses": [
+        "The Hyundai Tucson comes with Reliable crossover, stylish, great warranty. It starts at $26,000."
+      ]
+    },
+    {
+      "tag": "details_kia_sportage",
+      "patterns": [
+        "Tell me about Kia Sportage",
+        "What features does the Kia Sportage have?",
+        "Kia Sportage details"
+      ],
+      "responses": [
+        "The Kia Sportage comes with All-wheel drive, roomy interior, fuel efficiency. It starts at $25,000."
+      ]
+    },
+    {
+      "tag": "details_ford_f-150",
+      "patterns": [
+        "Tell me about Ford F-150",
+        "What features does the Ford F-150 have?",
+        "Ford F-150 details"
+      ],
+      "responses": [
+        "The Ford F-150 comes with Best-selling truck, high towing capacity, many trims. It starts at $35,000."
+      ]
+    },
+    {
+      "tag": "details_chevrolet_silverado",
+      "patterns": [
+        "Tell me about Chevrolet Silverado",
+        "What features does the Chevrolet Silverado have?",
+        "Chevrolet Silverado details"
+      ],
+      "responses": [
+        "The Chevrolet Silverado comes with Full-size truck, V8 available, strong build. It starts at $36,000."
+      ]
+    },
+    {
+      "tag": "details_ram_1500",
+      "patterns": [
+        "Tell me about RAM 1500",
+        "What features does the RAM 1500 have?",
+        "RAM 1500 details"
+      ],
+      "responses": [
+        "The RAM 1500 comes with Luxury pickup, spacious cabin, smooth ride. It starts at $37,000."
+      ]
+    },
+    {
+      "tag": "details_toyota_tacoma",
+      "patterns": [
+        "Tell me about Toyota Tacoma",
+        "What features does the Toyota Tacoma have?",
+        "Toyota Tacoma details"
+      ],
+      "responses": [
+        "The Toyota Tacoma comes with Midsize truck, off-road capable, durable. It starts at $34,000."
+      ]
+    },
+    {
+      "tag": "details_nissan_frontier",
+      "patterns": [
+        "Tell me about Nissan Frontier",
+        "What features does the Nissan Frontier have?",
+        "Nissan Frontier details"
+      ],
+      "responses": [
+        "The Nissan Frontier comes with New design, strong V6 engine, great utility. It starts at $33,000."
+      ]
+    },
+    {
+      "tag": "details_honda_ridgeline",
+      "patterns": [
+        "Tell me about Honda Ridgeline",
+        "What features does the Honda Ridgeline have?",
+        "Honda Ridgeline details"
+      ],
+      "responses": [
+        "The Honda Ridgeline comes with Unique design, car-like ride, good features. It starts at $36,000."
+      ]
+    },
+    {
+      "tag": "details_gmc_sierra",
+      "patterns": [
+        "Tell me about GMC Sierra",
+        "What features does the GMC Sierra have?",
+        "GMC Sierra details"
+      ],
+      "responses": [
+        "The GMC Sierra comes with Premium pickup, tech-laden, powerful. It starts at $39,000."
+      ]
+    },
+    {
+      "tag": "details_tesla_cybertruck",
+      "patterns": [
+        "Tell me about Tesla Cybertruck",
+        "What features does the Tesla Cybertruck have?",
+        "Tesla Cybertruck details"
+      ],
+      "responses": [
+        "The Tesla Cybertruck comes with Electric pickup, futuristic design, high durability. It starts at $49,000."
+      ]
+    },
+    {
+      "tag": "details_chevrolet_bolt_ev",
+      "patterns": [
+        "Tell me about Chevrolet Bolt EV",
+        "What features does the Chevrolet Bolt EV have?",
+        "Chevrolet Bolt EV details"
+      ],
+      "responses": [
+        "The Chevrolet Bolt EV comes with Affordable EV, compact, 259-mile range. It starts at $26,500."
+      ]
+    },
+    {
+      "tag": "details_nissan_leaf",
+      "patterns": [
+        "Tell me about Nissan Leaf",
+        "What features does the Nissan Leaf have?",
+        "Nissan Leaf details"
+      ],
+      "responses": [
+        "The Nissan Leaf comes with Compact EV, great for city driving, budget-friendly. It starts at $28,000."
+      ]
+    },
+    {
+      "tag": "details_ford_mustang_mach-e",
+      "patterns": [
+        "Tell me about Ford Mustang Mach-E",
+        "What features does the Ford Mustang Mach-E have?",
+        "Ford Mustang Mach-E details"
+      ],
+      "responses": [
+        "The Ford Mustang Mach-E comes with Electric SUV, sporty, high-tech. It starts at $42,000."
+      ]
+    },
+    {
+      "tag": "details_volkswagen_id.4",
+      "patterns": [
+        "Tell me about Volkswagen ID.4",
+        "What features does the Volkswagen ID.4 have?",
+        "Volkswagen ID.4 details"
+      ],
+      "responses": [
+        "The Volkswagen ID.4 comes with Electric crossover, smooth ride, modern interior. It starts at $40,000."
+      ]
+    },
+    {
+      "tag": "details_lucid_air",
+      "patterns": [
+        "Tell me about Lucid Air",
+        "What features does the Lucid Air have?",
+        "Lucid Air details"
+      ],
+      "responses": [
+        "The Lucid Air comes with Luxury EV, high range, futuristic cabin. It starts at $78,000."
+      ]
+    },
+    {
+      "tag": "details_rivian_r1t",
+      "patterns": [
+        "Tell me about Rivian R1T",
+        "What features does the Rivian R1T have?",
+        "Rivian R1T details"
+      ],
+      "responses": [
+        "The Rivian R1T comes with Electric pickup, adventure-ready, powerful. It starts at $67,000."
+      ]
+    },
+    {
+      "tag": "details_genesis_g70",
+      "patterns": [
+        "Tell me about Genesis G70",
+        "What features does the Genesis G70 have?",
+        "Genesis G70 details"
+      ],
+      "responses": [
+        "The Genesis G70 comes with Luxury sedan, sporty handling, high-end features. It starts at $39,000."
+      ]
+    },
+    {
+      "tag": "details_acura_tlx",
+      "patterns": [
+        "Tell me about Acura TLX",
+        "What features does the Acura TLX have?",
+        "Acura TLX details"
+      ],
+      "responses": [
+        "The Acura TLX comes with Premium sedan, all-wheel drive, sleek design. It starts at $38,000."
+      ]
+    },
+    {
+      "tag": "details_infiniti_q50",
+      "patterns": [
+        "Tell me about Infiniti Q50",
+        "What features does the Infiniti Q50 have?",
+        "Infiniti Q50 details"
+      ],
+      "responses": [
+        "The Infiniti Q50 comes with Luxury performance sedan, turbocharged engine. It starts at $42,000."
+      ]
+    }
+  ]
+}
